@@ -10,7 +10,7 @@ class EW_EnhancedEmails_Model_Core_Email_Template_Filter extends Mage_Core_Model
         }
 
         $dateString = $params['var'];
-        $dateOriginalFormat = isset($params['orignalFormat']) ? $params['orignalFormat'] : Zend_Date::ISO_8601;
+        $dateOriginalFormat = isset($params['originalFormat']) ? $params['originalFormat'] : Zend_Date::ISO_8601;
         $includeTime = isset($params['include_time']);
 
         $dateFormatted = Mage::getModel('core/locale')->storeDate($this->getStoreId(), $dateString, $includeTime);
