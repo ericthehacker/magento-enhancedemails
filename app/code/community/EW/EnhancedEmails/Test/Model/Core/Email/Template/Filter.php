@@ -12,8 +12,9 @@ class EW_EnhancedEmails_Test_Model_Core_Email_Template_Filter extends EcomDev_PH
      * @return bool
      */
     public function dateformatDirective($inputString, $expectation) {
-        Mage::log($inputString);
+        $filter = new EW_EnhancedEmails_Model_Core_Email_Template_Filter();
+        $value = $filter->filter($inputString);
 
-        return true;
+        $this->assertEquals($expectation, $value);
     }
 }
