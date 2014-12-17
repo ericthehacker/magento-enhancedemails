@@ -1,0 +1,3 @@
+-
+  input: "{{dateformat var=\"2017-12-04 15:46:3\" format=Y-M-d}}"
+  expectation: 12/4/2017
