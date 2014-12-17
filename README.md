@@ -20,10 +20,10 @@ this module adds the new `dateformat` directive.
 Usage of the new directive is of the following form:
 
 ```
-{{dateformat var=<date variable> [originalFormat=<optional hint for original date format>] [format=<optional target Zend_Date format>] [include_time=<true/false>]  
+{{dateformat var=<date variable> [originalFormat=<optional hint for original date format>] [format=<optional target Zend_Date format>] [include_time=<true/false>]}}
 ```
 
 ### Examples
 
 - To format a date from a Mysql datetime column in the form "Year-Month-Day", the following directive may be used:
-  `[[dateformat var=<date variable> format=Y-M-d}}`
+  `{{dateformat var=<date variable> format=Y-M-d}}`
