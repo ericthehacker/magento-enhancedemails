@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <EW_EnhancedEmails>
+            <version>1.0.0</version>
+        </EW_EnhancedEmails>
+    </modules>
+    <global>
+        <helpers>
+            <ew_enhancedemails>
+                <class>EW_EnhancedEmails_Helper</class>
+            </ew_enhancedemails>
+        </helpers>
+        <models>
+            <ew_enhancedemails>
+                <class>EW_EnhancedEmails_Model</class>
+            </ew_enhancedemails>
+
+            <core>
+                <rewrite>
+                    <email_template_filter>EW_EnhancedEmails_Model_Core_Email_Template_Filter</email_template_filter>
+                </rewrite>
+            </core>
+        </models>
+    </global>
+
+    <phpunit>
+        <suite>
+            <modules>
+                <EW_EnhancedEmails />
+            </modules>
+        </suite>
+    </phpunit>
+</config>
