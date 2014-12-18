@@ -6,6 +6,7 @@ class EW_EnhancedEmails_Test_Model_Core_Email_Template_Filter extends EcomDev_PH
      * test dateformatDirective functionality
      *
      * @test
+     * @loadFixture
      * @dataProvider dataProvider
      * @param $inputString
      * @param $expectation

@@ -36,8 +36,8 @@
 -
   input: "{{dateformat var=\"2017-12-04 15:46:39\" include_time=true}}"
   locale: en_GB
-  expectation: 04/12/2017
+  expectation: '04/12/2017 15:46'
 -
   input: "{{dateformat var=\"2017-12-04 15:46:39\" include_time=true}}"
   locale: zh_CN
-  expectation: '2017-12-4'
+  expectation: '2017-12-4 PM3:46'
