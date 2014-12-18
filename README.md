@@ -30,7 +30,7 @@ this module adds the new `dateformat` directive.
 Usage of the new directive is of the following form:
 
 ```
-{{dateformat var=<date variable> [originalFormat=<optional hint for original date format>] [format=<optional target Zend_Date format>] [include_time=<true/false>]}}
+{{dateformat var=<date variable> [originalFormat=<optional hint for original date format>] [format=<optional target Zend_Date format>] [include_time=true]}}
 ```
 
 ### Examples
