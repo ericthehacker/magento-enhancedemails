@@ -1,5 +1,6 @@
+# without time
 -
-  input: "{{dateformat var=\"2017-12-04 15:46:3\" format=YYYY-MM-dd}}"
+  input: "{{dateformat var=\"2017-12-04 15:46:39\" format=YYYY-MM-dd}}"
   locale: en_US
   expectation: 2017-12-04
 -
@@ -7,10 +8,36 @@
   locale: en_US
   expectation: ""
 -
-  input: "{{dateformat var=\"2017-12-04 15:46:3\" format=YYYY-MM-dd}}"
+  input: "{{dateformat var=\"2017-12-04 15:46:39\" format=YYYY-MM-dd}}"
   locale: en_GB
   expectation: 2017-12-04
 -
-  input: "{{dateformat var=\"2017-12-04 15:46:3\"}}"
+  input: "{{dateformat var=\"2017-12-04 15:46:39\"}}"
   locale: en_GB
   expectation: 04/12/2017
+-
+  input: "{{dateformat var=\"2017-12-04 15:46:39\"}}"
+  locale: zh_CN
+  expectation: '2017-12-4'
+
+# WITH time
+-
+  input: "{{dateformat var=\"2017-12-04 15:46:39\" format=YYYY-MM-dd include_time=true}}"
+  locale: en_US
+  expectation: 2017-12-04
+-
+  input: "{{dateformat include_time}}"
+  locale: en_US
+  expectation: ""
+-
+  input: "{{dateformat var=\"2017-12-04 15:46:39\" format=YYYY-MM-dd include_time=true}}"
+  locale: en_GB
+  expectation: 2017-12-04
+-
+  input: "{{dateformat var=\"2017-12-04 15:46:39\" include_time=true}}"
+  locale: en_GB
+  expectation: 04/12/2017
+-
+  input: "{{dateformat var=\"2017-12-04 15:46:39\" include_time=true}}"
+  locale: zh_CN
+  expectation: '2017-12-4'
