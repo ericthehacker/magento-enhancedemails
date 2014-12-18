@@ -3,6 +3,16 @@
 This module is intended to provide assistance with development of Magento emails. 
 Currently, however, it simply adds a new email directive – dateformat.
 
+## Installation via [modman](https://github.com/colinmollenhour/modman)
+
+```
+$ cd <magento root>
+$ modman init # if you've never used modman on this Magento instance
+$ modman clone https://github.com/ericthehacker/magento-enhancedemails.git
+```
+
+Be sure to flush your cache after installation!
+
 ## dateformat Email Directive
 
 ### Background
