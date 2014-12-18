@@ -1,0 +1,2 @@
+config:
+  default/general/locale/timezone: UTC
