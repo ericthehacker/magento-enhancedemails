@@ -11,7 +11,11 @@ class EW_EnhancedEmails_Test_Model_Core_Email_Template_Filter extends EcomDev_PH
      * @param $expectation
      * @return bool
      */
-    public function dateformatDirective($inputString, $expectation) {
+    public function dateformatDirective($inputString, $locale, $expectation) {
+        Mage::getSingleton('core/locale')->setLocale($locale)
+                                         ->setDefaultLocale($locale)
+                                         ->setLocaleCode($locale);
+
         $filter = new EW_EnhancedEmails_Model_Core_Email_Template_Filter();
         $value = $filter->filter($inputString);
 

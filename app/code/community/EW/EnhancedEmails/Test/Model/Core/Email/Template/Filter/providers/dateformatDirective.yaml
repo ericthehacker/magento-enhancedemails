@@ -1,6 +1,16 @@
 -
   input: "{{dateformat var=\"2017-12-04 15:46:3\" format=YYYY-MM-dd}}"
+  locale: en_US
   expectation: 2017-12-04
 -
   input: "{{dateformat}}"
+  locale: en_US
   expectation: ""
+-
+  input: "{{dateformat var=\"2017-12-04 15:46:3\" format=YYYY-MM-dd}}"
+  locale: en_GB
+  expectation: 2017-12-04
+-
+  input: "{{dateformat var=\"2017-12-04 15:46:3\"}}"
+  locale: en_GB
+  expectation: 04/12/2017
