@@ -4,6 +4,13 @@ class EW_EnhancedEmails_Model_Core_Email_Template_Filter extends Mage_Core_Model
 {
     const DATEFORMAT_ORIGINAL_FORMAT_DEFAULT = 'Y-M-d H:m:s';
 
+    /**
+     * Directive to format variable using Zend_Date formatting capabilities
+     *
+     * @param $construction
+     * @return string|Zend_Date
+     * @throws Zend_Date_Exception
+     */
     public function dateformatDirective($construction)
     {
         $params = $this->_getIncludeParameters($construction[2]);
@@ -15,7 +22,9 @@ class EW_EnhancedEmails_Model_Core_Email_Template_Filter extends Mage_Core_Model
         $dateOriginalFormat = isset($params['originalFormat']) ? $params['originalFormat'] : self::DATEFORMAT_ORIGINAL_FORMAT_DEFAULT;
         $includeTime = isset($params['include_time']);
 
-        $dateFormatted = Mage::getModel('core/locale')->storeDate($this->getStoreId(), $dateString, $includeTime);
+        $dateFormatted = Mage::helper('core')->formatDate(
+            Mage::getModel('core/locale')->storeDate($this->getStoreId(), $dateString, $includeTime, $dateOriginalFormat)
+        );
 
         if(isset($params['format'])) {
             $timezone = Mage::getStoreConfig(Mage_Core_Model_Locale::XML_PATH_DEFAULT_TIMEZONE, $this->getStoreId());
