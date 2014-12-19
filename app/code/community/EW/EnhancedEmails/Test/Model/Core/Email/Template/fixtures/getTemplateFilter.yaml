@@ -1,0 +1,48 @@
+scope:
+  website:
+    - website_id: 1
+      code: website1
+      name: website 1
+      default_group_id: 1
+    - website_id: 2
+      code: website2
+      name: website 2
+      default_group_id: 2
+  group:
+    - group_id: 1
+      website_id: 1
+      name: store group 1
+      default_store_id: 1
+    - group_id: 2
+      website_id: 2
+      name: store group 2
+      default_store_id: 2
+  store:
+    - store_id: 1
+      website_id: 1
+      group_id: 1
+      code: store1
+      name: store 1
+      is_active: true
+    - store_id: 2
+      website_id: 2
+      group_id: 2
+      code: store2
+      name: store 2
+      is_active: true
+config:
+  default/general/store_information/name: default value
+  websites/website1/general/store_information/name: website1 value
+  stores/store2/general/store_information/name: store2 value
+tables:
+  core/email_template:
+    -
+      template_id: 1
+      template_code: "test"
+      template_text: "{{config path=\"general/store_information/name\"}}"
+      template_type: 2
+      template_subject: "{{var store.getFrontendName()}}: New Order # {{var order.increment_id}}"
+      added_at: "2014-12-19 01:18:57"
+      modified_at: "2014-12-19 01:18:57"
+      orig_template_code: "sales_email_order_template"
+      orig_template_variables: "{\"store url=\\\"\\\"\":\"Store Url\",\"var logo_url\":\"Email Logo Image Url\",\"var logo_alt\":\"Email Logo Image Alt\",\"htmlescape var=$order.getCustomerName()\":\"Customer Name\",\"var store.getFrontendName()\":\"Store Name\",\"store url=\\\"customer/account/\\\"\":\"Customer Account Url\",\"var order.increment_id\":\"Order Id\",\"var order.getCreatedAtFormated('long')\":\"Order Created At (datetime)\",\"var order.getBillingAddress().format('html')\":\"Billing Address\",\"var payment_html\":\"Payment Details\",\"var order.getShippingAddress().format('html')\":\"Shipping Address\",\"var order.getShippingDescription()\":\"Shipping Description\",\"layout handle=\\\"sales_email_order_items\\\" order=$order\":\"Order Items Grid\",\"var order.getEmailCustomerNote()\":\"Email Order Note\"}"
