@@ -12,13 +12,15 @@ class EW_EnhancedEmails_Model_Core_Email_Template extends Mage_Core_Model_Email_
      */
     public function getTemplateFilter()
     {
+        $wasNull = empty($this->_templateFilter);
         $templateFilter = parent::getTemplateFilter();
 
         Mage::dispatchEvent(
             $this->_eventPrefix . '_get_template_filter_after',
             array(
                 'template_filter'   => $templateFilter,
-                'template'          => $this
+                'template'          => $this,
+                'was_null'          => $wasNull
             )
         );
 

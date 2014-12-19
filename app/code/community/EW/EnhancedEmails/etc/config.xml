@@ -23,6 +23,18 @@
                 </rewrite>
             </core>
         </models>
+
+        <events>
+            <core_email_template_get_template_filter_after>
+                <observers>
+                    <ew_enhancedemails>
+                        <type>singleton</type>
+                        <class>ew_enhancedemails/observer</class>
+                        <method>selectTemplateFilterStore</method>
+                    </ew_enhancedemails>
+                </observers>
+            </core_email_template_get_template_filter_after>
+        </events>
     </global>
 
     <phpunit>
