@@ -2,7 +2,7 @@
 <config>
     <modules>
         <EW_EnhancedEmails>
-            <version>1.0.0</version>
+            <version>1.1.0</version>
         </EW_EnhancedEmails>
     </modules>
     <global>
@@ -19,6 +19,7 @@
             <core>
                 <rewrite>
                     <email_template_filter>EW_EnhancedEmails_Model_Core_Email_Template_Filter</email_template_filter>
+                    <email_template>EW_EnhancedEmails_Model_Core_Email_Template</email_template>
                 </rewrite>
             </core>
         </models>
